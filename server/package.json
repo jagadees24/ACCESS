@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Temporary WiFi access management API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"No automated tests configured\"",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "seed:admin": "node scripts/seedAdmin.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.6.2",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.23.3",
+    "qrcode": "^1.5.4",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
