@@ -94,6 +94,24 @@ npm run dev
 
 The frontend runs on `http://localhost:5173` and proxies `/api/*` requests to the backend on `http://localhost:5000`.
 
+## Deploying the frontend to Netlify
+
+This repository includes `netlify.toml`, which builds the Vite application from
+the `client` folder and serves its `dist` output. No manual base or publish
+directory settings are needed when deploying from the repository root.
+
+The Express API in `server/` is not a static Netlify site. Deploy it to a Node
+host (for example Render, Railway, or a server) and set this Netlify environment
+variable before deploying the frontend:
+
+```env
+VITE_API_URL=https://your-api.example.com
+```
+
+Also set `APP_PUBLIC_URL` on the API host to your Netlify site URL, for example
+`https://your-site.netlify.app`. Without a deployed API URL, the Netlify page
+can load but login, QR generation, and access validation cannot work.
+
 ## API overview
 
 ### Admin routes
